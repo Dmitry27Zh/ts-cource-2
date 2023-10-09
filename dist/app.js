@@ -38,3 +38,24 @@ function sum2(a, b) {
     return a + b;
 }
 sum2(1, '2');
+function useState(initial) {
+    let value = initial;
+    function setValue(newValue) {
+        value = newValue;
+    }
+    // ---- (number | ((newValue: number) => void))[]
+    return [value, setValue];
+}
+let [counter2, setCounter2] = useState(2);
+// counter2 + 1 ---- error
+// setCounter2() ---- error
+function useState2(initial) {
+    let value = initial;
+    function setValue(newValue) {
+        value = newValue;
+    }
+    return [value, setValue];
+}
+let [counter3, setCounter3] = useState2(2);
+counter3 + 1;
+setCounter3(); // ---- Function: no arg, no error

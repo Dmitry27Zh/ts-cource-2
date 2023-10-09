@@ -48,3 +48,30 @@ function sum2(a: number | string, b: number | string) {
 }
 
 sum2(1, '2')
+
+function useState(initial: number) {
+  let value = initial
+  function setValue(newValue: number) {
+    value = newValue
+  }
+
+  // ---- (number | ((newValue: number) => void))[]
+  return [value, setValue]
+}
+
+let [counter2, setCounter2] = useState(2)
+// counter2 + 1 ---- error
+// setCounter2() ---- error
+
+function useState2(initial: number): [number, Function] {
+  let value = initial
+  function setValue(newValue: number) {
+    value = newValue
+  }
+
+  return [value, setValue]
+}
+
+let [counter3, setCounter3] = useState2(2)
+counter3 + 1
+setCounter3() // ---- Function: no arg, no error
