@@ -127,3 +127,86 @@ type Circle = {
 }
 
 function printFigure() {}
+
+type RouterOptions = {
+  baseUrl: string
+  routes: object[]
+}
+
+type RouterBaseRecord = {
+  path: string
+  name?: string
+}
+
+type RouterComponentRecord = RouterBaseRecord & {
+  component: object
+}
+
+type RouterRedirectRecord = {}
+
+class Router {
+  baseUrl: string
+  routes: object[]
+
+  constructor(options: RouterOptions) {
+    this.baseUrl = options.baseUrl
+    this.routes = options.routes
+  }
+}
+
+const router = new Router({
+  baseUrl: '/',
+  routes: [
+    {
+      path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
+      component: {},
+    },
+    {
+      path: '/office',
+      component: {},
+      children: [],
+    },
+  ],
+})
+
+type haha = number & string
+
+type TA = {
+  a: number
+  b: number
+}
+
+type TC = {
+  b: string
+  c: number
+}
+
+type Union = TA | TC
+const obj1: Union = { a: 2, b: 1 }
+type Extended = TA & TC
+// const obj2: Extended = { a: 1, b: 2, c: 3 } ---- error: b type – never
+type A = string | number
+type B = string | boolean
+type Intersection = A & B
+const value1: Intersection = '1' // ---- string
+
+const obj2: Union = { a: 1, b: 2, c: 3 } // ---- 3 keys
+type TA2 = {
+  a: number
+  b: number
+  c?: never
+}
+
+type TC2 = {
+  a?: never
+  b: string
+  c: number
+}
+
+type Union2 = TA2 | TC2
+// const obj3: Union2 = { a: 1, b: 2, c: 3 } ---- error: type never usage
+const obj4: Union2 = { a: 1, b: 2 }

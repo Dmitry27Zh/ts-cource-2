@@ -79,3 +79,32 @@ updateUser(2, {
 const freeState = 'free';
 const state1 = 'free';
 function printFigure() { }
+class Router {
+    constructor(options) {
+        this.baseUrl = options.baseUrl;
+        this.routes = options.routes;
+    }
+}
+const router = new Router({
+    baseUrl: '/',
+    routes: [
+        {
+            path: '/',
+            redirect: '/home',
+        },
+        {
+            path: '/home',
+            component: {},
+        },
+        {
+            path: '/office',
+            component: {},
+            children: [],
+        },
+    ],
+});
+const obj1 = { a: 2, b: 1 };
+const value1 = '1'; // ---- string
+const obj2 = { a: 1, b: 2, c: 3 }; // ---- 3 keys
+// const obj3: Union2 = { a: 1, b: 2, c: 3 } ---- error: type never usage
+const obj4 = { a: 1, b: 2 };
