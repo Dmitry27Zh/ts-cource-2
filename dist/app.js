@@ -19,3 +19,12 @@ if (valueInput instanceof HTMLInputElement) {
 if (valueInput !== null && typeof valueInput === 'object' && 'value' in valueInput) {
     valueInput.value = '3';
 }
+let c = 3;
+let d;
+d = 5;
+let e = 'str';
+let f = true;
+let g = /.*/g;
+let h = [1, 2, 3];
+let counter = 1;
+let i = [counter, () => counter++];

@@ -24,3 +24,13 @@ if (valueInput instanceof HTMLInputElement) {
 if (valueInput !== null && typeof valueInput === 'object' && 'value' in valueInput) {
   valueInput.value = '3'
 }
+
+let c: number = 3
+let d: number
+d = 5
+let e: string = 'str'
+let f: boolean = true
+let g: RegExp = /.*/g
+let h: number[] = [1, 2, 3]
+let counter = 1
+let i = [counter, () => counter++]
