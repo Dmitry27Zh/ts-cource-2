@@ -88,3 +88,22 @@ function useState3(initial: number): [number, (newValue: number) => void] {
 let [counter4, setCounter4] = useState3(5)
 // setCounter4() ---- error
 setCounter4(1)
+
+type User = {
+  name: string
+  some?: number
+}
+
+function setUser(user: User): void {}
+
+function updateUser(id: number, user: User): void {}
+
+updateUser(2, {
+  name: 'sjjs',
+  some: 100,
+  // a: 1, ---- error
+})
+
+const freeState = 'free'
+type TState = typeof freeState | 'pending' | 'done'
+const state1: TState = 'free'

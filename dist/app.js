@@ -69,3 +69,12 @@ function useState3(initial) {
 let [counter4, setCounter4] = useState3(5);
 // setCounter4() ---- error
 setCounter4(1);
+function setUser(user) { }
+function updateUser(id, user) { }
+updateUser(2, {
+    name: 'sjjs',
+    some: 100,
+    // a: 1, ---- error
+});
+const freeState = 'free';
+const state1 = 'free';
