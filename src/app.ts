@@ -107,3 +107,23 @@ updateUser(2, {
 const freeState = 'free'
 type TState = typeof freeState | 'pending' | 'done'
 const state1: TState = 'free'
+
+type Figure = {
+  type: 'square' | 'circle'
+}
+
+type square = {
+  type: 'square'
+  x: number
+  y: number
+  perimeter: () => void
+  area: () => void
+}
+
+type Circle = {
+  type: 'circle'
+  r: number
+  area: () => number
+}
+
+function printFigure() {}

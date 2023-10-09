@@ -78,3 +78,4 @@ updateUser(2, {
 });
 const freeState = 'free';
 const state1 = 'free';
+function printFigure() { }
