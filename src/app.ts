@@ -34,3 +34,17 @@ let g: RegExp = /.*/g
 let h: number[] = [1, 2, 3]
 let counter = 1
 let i = [counter, () => counter++]
+
+function sum2(a: number | string, b: number | string) {
+  if (typeof a === 'string') {
+    a = parseInt(a)
+  }
+
+  if (typeof b === 'string') {
+    b = parseInt(b)
+  }
+
+  return a + b
+}
+
+sum2(1, '2')

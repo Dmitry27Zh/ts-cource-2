@@ -28,3 +28,13 @@ let g = /.*/g;
 let h = [1, 2, 3];
 let counter = 1;
 let i = [counter, () => counter++];
+function sum2(a, b) {
+    if (typeof a === 'string') {
+        a = parseInt(a);
+    }
+    if (typeof b === 'string') {
+        b = parseInt(b);
+    }
+    return a + b;
+}
+sum2(1, '2');
