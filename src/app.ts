@@ -9,3 +9,7 @@ function sum(a: number, b: number) {
 
 // console.log(sum(1, '2')) ---- error
 console.log(sum(1, 2))
+
+const valueInput = document.querySelector('.value') as HTMLInputElement
+// valueInput.value = 2  ---- error
+valueInput.value = '2'

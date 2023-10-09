@@ -8,3 +8,6 @@ function sum(a, b) {
 }
 // console.log(sum(1, '2')) ---- error
 console.log(sum(1, 2));
+const valueInput = document.querySelector('.value');
+// valueInput.value = 2  ---- error
+valueInput.value = '2';
