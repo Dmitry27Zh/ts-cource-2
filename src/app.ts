@@ -75,3 +75,16 @@ function useState2(initial: number): [number, Function] {
 let [counter3, setCounter3] = useState2(2)
 counter3 + 1
 setCounter3() // ---- Function: no arg, no error
+
+function useState3(initial: number): [number, (newValue: number) => void] {
+  let value = initial
+  function setValue(newValue: number) {
+    value = newValue
+  }
+
+  return [value, setValue]
+}
+
+let [counter4, setCounter4] = useState3(5)
+// setCounter4() ---- error
+setCounter4(1)
