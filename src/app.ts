@@ -130,7 +130,7 @@ function printFigure() {}
 
 type RouterOptions = {
   baseUrl: string
-  routes: object[]
+  routes: RouterRecord[]
 }
 
 type RouterBaseRecord = {
@@ -140,9 +140,16 @@ type RouterBaseRecord = {
 
 type RouterComponentRecord = RouterBaseRecord & {
   component: object
+  children?: RouterRecord[]
+  redirect?: never
 }
 
-type RouterRedirectRecord = {}
+type RouterRedirectRecord = RouterBaseRecord & {
+  component?: never
+  redirect: string
+}
+
+type RouterRecord = RouterComponentRecord | RouterRedirectRecord
 
 class Router {
   baseUrl: string
@@ -167,8 +174,9 @@ const router = new Router({
     },
     {
       path: '/office',
+      // redirect: '/', ---- error
       component: {},
-      children: [],
+      // children: [],  ---- error
     },
   ],
 })

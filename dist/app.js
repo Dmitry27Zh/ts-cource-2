@@ -98,8 +98,9 @@ const router = new Router({
         },
         {
             path: '/office',
+            // redirect: '/', ---- error
             component: {},
-            children: [],
+            // children: [],  ---- error
         },
     ],
 });
