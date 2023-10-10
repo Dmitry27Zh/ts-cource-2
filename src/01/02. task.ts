@@ -88,3 +88,5 @@ let result: TGroup = {
     },
   ],
 }
+
+export {}

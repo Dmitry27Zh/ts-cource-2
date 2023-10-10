@@ -218,3 +218,5 @@ type TC2 = {
 type Union2 = TA2 | TC2
 // const obj3: Union2 = { a: 1, b: 2, c: 3 } ---- error: type never usage
 const obj4: Union2 = { a: 1, b: 2 }
+
+export {}
