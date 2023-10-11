@@ -4,11 +4,13 @@ type TWeapon = {
 }
 
 type TWeaponCommon = TWeapon & {
+  type: 'common'
   wear: number
   arrows?: never
 }
 
 type TWeaponArcher = TWeapon & {
+  type: 'archer'
   arrows: number
   wear?: never
 }
@@ -51,6 +53,7 @@ let result: TGroup = {
       health: 100,
       armor: 5,
       weapon: {
+        type: 'common',
         damage: 5,
         range: 1,
         wear: 0,
@@ -64,6 +67,7 @@ let result: TGroup = {
       health: 100,
       armor: 5,
       weapon: {
+        type: 'common',
         damage: 5,
         range: 1,
         wear: 0,
@@ -74,6 +78,7 @@ let result: TGroup = {
       health: 100,
       armor: 5,
       weapon: {
+        type: 'archer',
         damage: 2,
         range: 10,
         arrows: 40,
