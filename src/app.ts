@@ -3,4 +3,5 @@
 // import './02/01. async data type'
 // import './02/02. lesson'
 // import './04/03. oop'
-import './04/04. task'
+// import './04/04. task'
+import './06/02. task-map'

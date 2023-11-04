@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .map {
+        width: 800px;
+        height: 400px;
+      }
+    </style>
   </head>
   <body>
     <input class="value" type="text" />
     <div id="root"></div>
+    <hr />
+    <div>
+      <hr />
+      <button class="app-add-delivery-zone" type="button" disabled>Добавить зону доставки</button>
+      <button class="app-save" type="button" disabled>Сохранить</button>
+      <div class="map"></div>
+      <hr />
+      <pre class="app-sample-result-marker"></pre>
+      <hr />
+      <pre class="app-sample-result-delivery"></pre>
+      <hr />
+    </div>
     <script src="./dist/app.js"></script>
   </body>
 </html>
